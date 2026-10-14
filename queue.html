@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irtaza's Uniform Shop | The Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Irtaza's Uniform Shop</h1>
+  </header>
+
+  <main class="page">
+    <div class="page-intro">
+      <h2>The Queue</h2>
+      <p>Enter a name, waiting time and bay to add someone to the queue.</p>
+    </div>
+
+    <div class="workspace">
+      <section class="panel board-panel" aria-labelledby="board-heading">
+        <div class="panel-heading">
+          <h3 id="board-heading">Waiting List</h3>
+        </div>
+        <p id="status" role="status" aria-live="polite">The queue is ready for its first visitor.</p>
+        <div class="table-scroll">
+          <table aria-label="Waiting list">
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Minutes</th><th scope="col">Bay</th></tr>
+            </thead>
+            <tbody id="board"></tbody>
+          </table>
+        </div>
+        <p class="board-note">The same person in the same bay has one row.</p>
+      </section>
+
+      <section class="panel desk-panel" aria-labelledby="desk-heading">
+        <div class="panel-heading">
+          <h3 id="desk-heading">Add a Visitor</h3>
+        </div>
+        <form id="wait" novalidate>
+          <div class="field">
+            <label for="who">Name</label>
+            <input id="who" name="who" type="text" placeholder="Ali" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="mins">Minutes</label>
+            <input id="mins" name="mins" type="text" inputmode="decimal" placeholder="10" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="bay">Bay</label>
+            <select id="bay" name="bay">
+              <option>Bay 1</option>
+              <option>Bay 2</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button id="join" type="submit">Join</button>
+            <button id="call" type="button">Call next</button>
+          </div>
+        </form>
+        <div class="figures" aria-label="Queue summary">
+          <div class="figure"><span>Waiting</span><strong id="waiting">0</strong></div>
+          <div class="figure"><span>Longest</span><strong><span id="longest">0</span> <small>min</small></strong></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>Lab 05 — The DOM and a form</span>
+    <span>Irtaza Shahid · Roll No. 247209</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
